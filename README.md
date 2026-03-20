@@ -1,18 +1,36 @@
-# React + Vite
+# Hover
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Encontre as melhores lojas, notas da crítica e os próximos lançamentos de jogos em um só lugar.**
 
-Currently, two official plugins are available:
+## Visão Geral
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+** É um agregador de jogos que ajuda você a descobrir qual é a melhor opção de loja, valores e avaliações de jogos. Utilizando a API **RAWG API v1.0**, a ideia é reunir todas as informações relevantes de um jogo em um lugar só:
 
-## React Compiler
+- Melhores preços e lojas (Steam, Epic, Xbox, PlayStation, etc.)
+- Notas da crítica (Metacritic, OpenCritic quando disponível via RAWG)
+- Próximos lançamentos e tendências
+- Busca inteligente por jogos, gêneros, plataformas e mais.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Ideal para quem está perdido na avalanche de lançamentos e quer decidir rápido: "Qual jogo eu jogo agora?"
 
-Note: This will impact Vite dev & build performances.
+## Funcionalidades Principais (em desenvolvimento)
 
-## Expanding the ESLint configuration
+- 🔍 Busca por nome de jogo com autocomplete
+- 📊 Filtros por gênero, plataforma, ano, nota mínima
+- 🏪 Comparação de preços em diferentes lojas
+- ⭐ Exibição de avaliações da crítica e da comunidade
+- 🗓️ Seção dedicada a próximos lançamentos
+- 🎨 Design dark moderno com toques neon/gamer
+- Responsivo (mobile first em progresso)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tecnologias Utilizadas
+
+| Categoria       | Tecnologias / Ferramentas                          |
+|-----------------|-----------------------------------------------------|
+| Frontend        | HTML5, CSS3 (React / JS Vanilla)                    |
+| JavaScript      | JavaScript (ES6+), Fetch API                        |
+| API             | RAWG Video Games Database API v1.0                  |
+| Estilização     | CSS custom + gradientes neon (em progresso)         |
+| Deploy (futuro) | Vercel / GitHub Pages                               |
+| Outros          | Git, npm                                            |
+
