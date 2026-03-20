@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background-Primario);
+  color: var(--color-fonte-Primaria);
+  font-family: var(--font-Primaria);
+}
+
+.Section_Topo {
+  min-height: 100vh;
+
+  /* imagem de background e o linear no realce de cor da imagem */
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)),
+    url("/Images/img_section_topo.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.H1_Topo {
+  align-items: flex-start;
+  font-size: var(--font-size-Titulo);
+
+  /* adiciona gradient na no h1 */
+  background: linear-gradient(90deg, #a78bfa, #7dd3fc, #f472b6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  max-width: 800px;
+}
+
+.P1_Topo {
+  font-size: 1.4rem;
+  color: #94a3b8;
+}
+
+/* div de input */
+.Div_Input {
+  margin-top: -20rem;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* titulo buscar */
+.SearchGame {
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/*Input de busca*/
+.inputBuscar {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.3rem;
+  padding: 12px 20px;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 40rem;
+  height: 3.5rem;
+}
+
+.inputBuscar::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1rem;
+}
+
+/* Contorno na borda ao clicar no input*/
+.inputBuscar:focus {
+  border-color: #a78bfa;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Section da faixa */
+.SectionFaixa {
+  min-height: 30vh;
+  background-color: var(--color-background-Secundaria);
+  padding: 5px 5%;
+}
+
+/* SECTION DE CONTEUDO (IMGS JOGOS, DESCRIÇÃO, NOTAS, LANÇAMENTOS E VALORES */
+
+.SectionConteudo {
+  min-height: 40vh;
+  background-color: var(--color-background-Primario);
+  padding: 50px 10%;
+}

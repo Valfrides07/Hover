@@ -1,0 +1,17 @@
+:root {
+
+  /* backgrounds colors */
+  --color-background-Primario: #101927;
+  --color-background-Secundaria: black;
+  --color-background-Terciaria:#2E3C8C;
+
+  /* cor da fonte */
+  --color-fonte-Primaria: white;
+
+  /* tipos de fontes */
+  --font-Primaria: "Inter", "Open Sans", "Roboto";
+  
+  /* tamanho de fontes  */
+  --font-size-Titulo: 5rem;
+  --font-size-Subtitulo:1.15rem
+}
