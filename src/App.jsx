@@ -1,5 +1,5 @@
 // Rotas de pastas
-
+import { useState, useEffect } from "react";
 import "./App.css";
 // rotas
 
@@ -12,14 +12,25 @@ import Hero from "./component/main/index";
 // footer 
 // import footer from "./component/footer/index"
 
-
-
 function App() {
+
+  // function de busca para jogos
+  const [Jogos, setJogos ] = useState([])
+
+  async function buscarJogos(nome) {
+    const res = await fetch(
+      `https://api.rawg.io/api/games?key=${API_KEY}&search=${nome}`
+    )
+    const data = await res.json()
+    setJogos(data.results)
+    
+  }
+
   return (
     <div>
-      <Header/>
+      <Header onSearch={buscarJogos}/>
     
-      <Hero />
+      <Hero onSearch={buscarJogos}/>
     
     </div>
   );

@@ -47,7 +47,6 @@ function Hero() {
       </section>
 
       {/* section de conteudo */}
-
       <section className={styles.SectionConteudo}>
         <h1 className={styles.H1_conteudo}>Mais Populares:</h1>
       </section>

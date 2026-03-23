@@ -21,13 +21,14 @@
 }
 
 .header img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 /* Categorias */
 .DetailsCategorias {
   display: inline-block;
   position: relative;
+  padding: 10px;
 }
 
 /* A lista que aparece ao clicar */
@@ -36,6 +37,7 @@
   /* Faz o menu aparecer logo abaixo do botão */
   top: 100%;
   left: 0;
+  border-radius: 10px;
   /* fique por cima de outros elementos */
   z-index: 10;
 
@@ -47,6 +49,7 @@
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   flex-direction: column;
   align-items: center;
+  text-align: left;
 }
 
 .liOpcoes{
@@ -55,6 +58,7 @@
   font-size: 17px;
   color: white;
   display: block;
+  text-align: left;
 }
 
 .liOpcoes:hover {
@@ -65,7 +69,7 @@
 
 .CategoriasHeader {
   display: inline-block;
-  padding-right: 2rem;
+  padding-right: 2.1rem;
   font-size: 1.3rem;
   font-family: var(--font-Primaria);
   user-select: none;
