@@ -4,7 +4,7 @@
 
 ## Visão Geral
 
-** É um agregador de jogos que ajuda você a descobrir qual é a melhor opção de loja, valores e avaliações de jogos. Utilizando a API **RAWG API v1.0**, a ideia é reunir todas as informações relevantes de um jogo em um lugar só:
+É site de visualização jogos que ajuda você a descobrir qual é a melhor opção de loja, valores e avaliações de jogos. Utilizando a API **RAWG API v1.0**, a ideia é reunir todas as informações relevantes de um jogo em um lugar só:
 
 - Melhores preços e lojas (Steam, Epic, Xbox, PlayStation, etc.)
 - Notas da crítica (Metacritic, OpenCritic quando disponível via RAWG)
@@ -15,12 +15,12 @@ Ideal para quem está perdido na avalanche de lançamentos e quer decidir rápid
 
 ## Funcionalidades Principais (em desenvolvimento)
 
-- 🔍 Busca por nome de jogo com autocomplete
-- 📊 Filtros por gênero, plataforma, ano, nota mínima
-- 🏪 Comparação de preços em diferentes lojas
-- ⭐ Exibição de avaliações da crítica e da comunidade
-- 🗓️ Seção dedicada a próximos lançamentos
-- 🎨 Design dark moderno com toques neon/gamer
+- Busca por nome de jogo com autocomplete
+- Filtros por gênero, plataforma, ano, nota mínima
+- Comparação de preços em diferentes lojas
+- Exibição de avaliações da crítica e da comunidade
+- Seção dedicada a próximos lançamentos
+- Design dark moderno com toques neon/gamer
 - Responsivo (mobile first em progresso)
 
 ## Tecnologias Utilizadas
