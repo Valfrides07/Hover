@@ -15,12 +15,12 @@ Ideal para quem está perdido na avalanche de lançamentos e quer decidir rápid
 
 ## Funcionalidades Principais (em desenvolvimento)
 
-- 🔍 Busca por nome de jogo com autocomplete
-- 📊 Filtros por gênero, plataforma, ano, nota mínima
-- 🏪 Comparação de preços em diferentes lojas
-- ⭐ Exibição de avaliações da crítica e da comunidade
-- 🗓️ Seção dedicada a próximos lançamentos
-- 🎨 Design dark moderno com toques neon/gamer
+- Busca por nome de jogo com autocomplete
+- Filtros por gênero, plataforma, ano, nota mínima
+- Comparação de preços em diferentes lojas
+- Exibição de avaliações da crítica e da comunidade
+- Seção dedicada a próximos lançamentos
+- Design dark moderno com toques neon/gamer
 - Responsivo (mobile first em progresso)
 
 ## Tecnologias Utilizadas
