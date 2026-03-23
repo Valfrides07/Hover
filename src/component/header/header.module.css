@@ -1,1 +1,105 @@
-/* cor dele vai ser preto */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  height: 4.8rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141b2b;
+  z-index: 1000;
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 0.6);
+}
+
+.header img {
+  height: 150px;
+  width: auto;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  padding-left: 1rem;
+}
+
+.header img:hover {
+  transform: scale(1.2);
+}
+
+/* Categorias */
+.DetailsCategorias {
+  display: inline-block;
+  position: relative;
+}
+
+/* A lista que aparece ao clicar */
+.ulCategorias {
+  position: absolute;
+  /* Faz o menu aparecer logo abaixo do botão */
+  top: 100%;
+  left: 0;
+  /* fique por cima de outros elementos */
+  z-index: 10;
+
+  background-color: #2a2a2a;
+  min-width: 100px;
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  align-items: center;
+}
+
+.liOpcoes{
+  margin: 15px;
+  text-decoration: underline;
+  font-size: 17px;
+  color: white;
+  display: block;
+}
+
+.liOpcoes:hover {
+  transition: all 0.25s ease-in-out;
+  color: #a78bfa;
+  cursor: pointer;
+}
+
+.CategoriasHeader {
+  display: inline-block;
+  padding-right: 2rem;
+  font-size: 1.3rem;
+  font-family: var(--font-Primaria);
+  user-select: none;
+}
+
+.CategoriasHeader:hover {
+  transition: all 0.25s ease-in-out;
+  color: #a78bfa;
+  cursor: pointer;
+}
+
+/* Buscar Header */
+.BuscarHeader {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.3rem;
+  padding: 12px 20px;
+  margin-right: 2rem;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 17rem;
+  height: 2.5rem;
+}
+
+.BuscarHeader:hover {
+  border-color: #a78bfa;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.BuscarHeader::placeholder {
+  color: var(--color-fonte-opaca);
+  font-size: 1rem;
+  font-family: var(--font-Primaria);
+  user-select: none;
+}

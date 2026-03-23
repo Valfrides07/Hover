@@ -13,12 +13,14 @@ body {
   background-image:
     linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)),
     url("/Images/img_section_topo.jpg");
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 8rem;
   box-sizing: border-box;
   align-items: flex-start;
+  padding: 5px 5%;
 }
 
 .H1_Topo {
@@ -35,8 +37,8 @@ body {
 }
 
 .P1_Topo {
-  font-size: 1.4rem;
-  color: #94a3b8;
+  font-size: 1.5rem;
+  color: var(--color-fonte-opaca);
 }
 
 /* div de input */
@@ -56,6 +58,7 @@ body {
   width: 100%;
   text-align: left;
   margin-bottom: 10px;
+  user-select: none;
 }
 
 /*Input de busca*/
@@ -73,27 +76,94 @@ body {
 }
 
 .inputBuscar::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-fonte-opaca);
   font-size: 1rem;
+  user-select: none;
 }
 
 /* Contorno na borda ao clicar no input*/
-.inputBuscar:focus {
+.inputBuscar:hover {
   border-color: #a78bfa;
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Section da faixa */
-.SectionFaixa {
-  min-height: 30vh;
-  background-color: var(--color-background-Secundaria);
+/* Faixa dos descontos */
+.SectionDescontosdaSemana {
+  min-height: 55vh;
+  position: relative;
+  background: linear-gradient(135deg, #0a2540 0%, #1e40af 100%);
+  color: #fff;
   padding: 5px 5%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 0.6);
+
+  /* Pontinhos flutuantes de fundo */
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12) 1px,
+    transparent 0
+  );
+  background-size: 35px 35px;
+}
+
+.h2DescontosdaSemana {
+  text-align: left;
+  font-size: 2.5rem;
+}
+
+.SpanDescontosSemana {
+  background: linear-gradient(90deg, #a78bfa, #7dd3fc, #f472b6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* SECTION DE CONTEUDO (IMGS JOGOS, DESCRIÇÃO, NOTAS, LANÇAMENTOS E VALORES */
-
 .SectionConteudo {
+  display: flex;
   min-height: 40vh;
   background-color: var(--color-background-Primario);
-  padding: 50px 10%;
+  padding: 5px 5%;
+}
+
+.H1_conteudo {
+  text-align: center;
+  padding-top: 5rem;
+  font-size: 2.5rem;
+}
+
+/* Responsividade mobile */
+@media (max-width: 768px) {
+  .Section_Topo {
+    padding: 2rem;
+    align-items: flex-start;
+  }
+
+  .H1_Topo {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+
+  .P1_Topo {
+    font-size: 1rem;
+  }
+
+  .Div_Input {
+    margin-top: 2rem;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .SearchGame {
+    font-size: 1.2rem;
+  }
+
+  /* Campo de busca */
+  .inputBuscar {
+    width: 100%;
+    font-size: 1rem;
+    height: 3rem;
+    margin-bottom: -7rem;
+  }
 }

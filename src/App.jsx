@@ -16,12 +16,12 @@ import Hero from "./component/main/index";
 
 function App() {
   return (
-    <>
+    <div>
       <Header/>
     
       <Hero />
     
-    </>
+    </div>
   );
 }
 
