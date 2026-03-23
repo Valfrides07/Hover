@@ -4,7 +4,7 @@
 
 ## Visão Geral
 
-É um "encurtador" de jogos que ajuda você a descobrir qual é a melhor opção de loja, valores e avaliações de jogos. Utilizando a API **RAWG API v1.0**, a ideia é reunir todas as informações relevantes de um jogo em um lugar só:
+É site de visualização jogos que ajuda você a descobrir qual é a melhor opção de loja, valores e avaliações de jogos. Utilizando a API **RAWG API v1.0**, a ideia é reunir todas as informações relevantes de um jogo em um lugar só:
 
 - Melhores preços e lojas (Steam, Epic, Xbox, PlayStation, etc.)
 - Notas da crítica (Metacritic, OpenCritic quando disponível via RAWG)
