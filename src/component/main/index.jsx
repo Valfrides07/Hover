@@ -1,7 +1,9 @@
 // landing page
 import styles from "./hero.module.css";
+import { useState } from "react";
 
-function Hero() {
+function Hero({ onSearch }) {
+  const [busca, setBusca] = useState("")
   return (
     <main>
       <section className={styles.Section_Topo}>
@@ -22,17 +24,24 @@ function Hero() {
         {/* Div do campo de  busca da home  */}
         <div className={styles.Div_Input}>
 
-          <label className={styles.SearchGame} for="search">
+          <label className={styles.SearchGame} id="search" htmlFor="search">
             Faça a sua busca:
           </label>
         
           {/* Buscar */}
-          <input
-            className={styles.inputBuscar}
-            type="search"
-            name="search"
-            id="search"
-            placeholder="Buscar jogos, gêneros ou plataformas..."/>
+        <input
+          value={busca}
+          onChange={(e) => setBusca(e.target.value)}
+          onKeyDown={(e) => {
+            // para ser buscado ao clicar em Enter enão pérmite chamar a API caso o input esteja vazio
+            if (e.key === "Enter" && busca.trim() !== "") {
+              onSearch(busca.trim())
+            }
+          }}
+          className={styles.inputBuscar}
+          type="search"
+          placeholder="Buscar jogos..."
+        />
         </div>
         
       </section>
