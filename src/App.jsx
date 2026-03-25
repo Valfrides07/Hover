@@ -1,48 +1,71 @@
-// Rotas de pastas
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
-// rotas
-
-// header fica fora do escopo das rotas para caso nao seja necessario aparacer em outras abas
 import Header from "./component/header/index";
-
-// Section superior
 import Hero from "./component/main/index";
 
-// footer
-// import footer from "./component/footer/index"
-
-// API key
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 function App() {
-  // vai servir para armazenar dados de busca do "Jogos" e "setJogos"
+  // Mais Populares
   const [jogos, setJogos] = useState([]);
+             
+  // Jogos com desconto
+  const [jogosDesconto, setJogosDesconto] = useState([]); 
 
-  // function de busca para jogos
-  async function buscarJogos(nome) {
-    
+  // Carrega os 9 jogos mais populares
+  async function carregarPopulares() {
     try {
       const res = await fetch(
-        `https://api.rawg.io/api/games?key=${API_KEY}&search=${nome}`,
+        `https://api.rawg.io/api/games?key=${API_KEY}&ordering=-rating&page_size=9`
       );
-
       const dados = await res.json();
-      setJogos(dados.results);
-    } 
-    catch (erro) {
-      console.log("Erro na API", erro);
+      setJogos(dados.results || []);
+    } catch (erro) {
+      console.error("Erro ao carregar populares:", erro);
     }
   }
 
+  // Carrega 3 jogos com "valores baixos" usamndo os melhores avaliados
+  async function carregarDescontos() {
+    try {
+      const res = await fetch(
+        `https://api.rawg.io/api/games?key=${API_KEY}&ordering=-rating&page_size=3`
+      );
+      const dados = await res.json();
+      setJogosDesconto(dados.results || []);
+    } catch (erro) {
+      console.error("Erro ao carregar descontos:", erro);
+    }
+  }
+
+  // Busca do usuário (atualiza apenas a seção de populares)
+  async function buscarJogos(nome) {
+    if (!nome?.trim()) {
+      carregarPopulares();
+      return;
+    }
+    try {
+      const res = await fetch(
+        `https://api.rawg.io/api/games?key=${API_KEY}&search=${encodeURIComponent(nome.trim())}&ordering=-rating&page_size=9`
+      );
+      const dados = await res.json();
+      setJogos(dados.results || []);
+    } catch (erro) {
+      console.error("Erro na busca:", erro);
+    }
+  }
+
+  // Carrega tudo ao abrir a página
+  useEffect(() => {
+    carregarPopulares();
+    carregarDescontos();
+  }, []);
+
   return (
     <div>
-    {/* input de busca */}
       <Header onSearch={buscarJogos} />
-
-      {/* mostra os jogos */}
-      <Hero jogos={jogos} />
+      <Hero jogos={jogos} jogosDesconto={jogosDesconto} />
     </div>
   );
 }

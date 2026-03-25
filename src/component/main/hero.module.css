@@ -4,30 +4,30 @@ body {
   background-color: var(--color-background-Primario);
   color: var(--color-fonte-Primaria);
   font-family: var(--font-Primaria);
+
+  /* contra scroll lateral */
+  overflow-x: hidden; 
+}
+
+main {
+  width: 100%;
 }
 
 .Section_Topo {
   min-height: 100vh;
-
-  /* imagem de background e o linear no realce de cor da imagem */
   background-image:
     linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)),
     url("/Images/img_section_topo.jpg");
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8rem;
+  padding: 5px 5%;
   box-sizing: border-box;
   align-items: flex-start;
-  padding: 5px 5%;
 }
 
 .H1_Topo {
-  align-items: flex-start;
   font-size: var(--font-size-Titulo);
-
-  /* adiciona gradient na no h1 */
   background: linear-gradient(90deg, #a78bfa, #7dd3fc, #f472b6);
   background-clip: text;
   -webkit-background-clip: text;
@@ -41,7 +41,7 @@ body {
   color: var(--color-fonte-opaca);
 }
 
-/* div de input */
+/* Input de busca */
 .Div_Input {
   margin-top: -20rem;
   width: 100%;
@@ -52,16 +52,11 @@ body {
   align-items: flex-start;
 }
 
-/* titulo buscar */
 .SearchGame {
   font-size: 1.5rem;
-  width: 100%;
-  text-align: left;
   margin-bottom: 10px;
-  user-select: none;
 }
 
-/*Input de busca*/
 .inputBuscar {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -70,35 +65,24 @@ body {
   padding: 12px 20px;
   border-radius: 8px;
   outline: none;
-  transition: all 0.3s ease;
   width: 40rem;
   height: 3.5rem;
+  transition: all 0.3s ease;
 }
 
-.inputBuscar::placeholder {
-  color: var(--color-fonte-opaca);
-  font-size: 1rem;
-  user-select: none;
-}
-
-/* Contorno na borda ao clicar no input*/
 .inputBuscar:hover {
   border-color: #a78bfa;
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Faixa dos descontos */
 .SectionDescontosdaSemana {
   min-height: 55vh;
-  position: relative;
   background: linear-gradient(135deg, #0a2540 0%, #1e40af 100%);
   color: #fff;
   padding: 5px 5%;
   text-align: center;
   overflow: hidden;
   box-shadow: 0 5px 50px rgba(0, 0, 0, 0.6);
-
-  /* Pontinhos flutuantes de fundo */
   background-image: radial-gradient(
     circle,
     rgba(255, 255, 255, 0.12) 1px,
@@ -119,51 +103,42 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* SECTION DE CONTEUDO (IMGS JOGOS, DESCRIÇÃO, NOTAS, LANÇAMENTOS E VALORES */
+/* Section dos cards */
 .SectionConteudo {
-  display: flex;
-  min-height: 40vh;
+  padding: 40px 5%; 
+  width: 100%;
   background-color: var(--color-background-Primario);
-  padding: 5px 5%;
 }
 
 .H1_conteudo {
   text-align: center;
-  padding-top: 5rem;
   font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.ContainerCards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    /* 3 cards por linha */
+    minmax(320px, 1fr)
+  ); 
+  gap: 24px;
+  width: 100%;
+  /* resolveu o bug de scroll lateral */;
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
 /* Responsividade mobile */
-@media (max-width: 768px) {
-  .Section_Topo {
-    padding: 2rem;
-    align-items: flex-start;
+@media (max-width: 900px) {
+  .ContainerCards {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .H1_Topo {
-    font-size: 2rem;
-    max-width: 100%;
-  }
-
-  .P1_Topo {
-    font-size: 1rem;
-  }
-
-  .Div_Input {
-    margin-top: 2rem;
-    margin-left: 0;
-    max-width: 100%;
-  }
-
-  .SearchGame {
-    font-size: 1.2rem;
-  }
-
-  /* Campo de busca */
-  .inputBuscar {
-    width: 100%;
-    font-size: 1rem;
-    height: 3rem;
-    margin-bottom: -7rem;
+@media (max-width: 600px) {
+  .ContainerCards {
+    grid-template-columns: 1fr;
   }
 }

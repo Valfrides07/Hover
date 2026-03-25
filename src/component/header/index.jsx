@@ -14,6 +14,7 @@ function Header({ onSearch }) {
           <details className={styles.DetailsCategorias}>
             <summary className={styles.CategoriasHeader}>Categorias ▾</summary>
 
+            {/* Cada genero que ao ser clicado recarrega a pagina com o game pesquisado */}
             <ul className={styles.ulCategorias}>
               <li>Plataformas:</li>
               <li><button className={styles.liOpcoes} onClick={() => onSearch("console")}>Consoles</button></li>
@@ -29,7 +30,7 @@ function Header({ onSearch }) {
             className={styles.BuscarHeader}
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
-            placeholder="Buscar..."
+            placeholder="Buscar jogos..."
           />
 
           <button className={styles.BtnBuscar} onClick={() => onSearch(busca)}>

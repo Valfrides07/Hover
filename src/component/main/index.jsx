@@ -1,15 +1,12 @@
-// landing page
 import styles from "./hero.module.css";
-import { useState } from "react";
+import GameCard from "../GameCards/Cards";
 
-function Hero({ onSearch }) {
-  const [busca, setBusca] = useState("")
+function Hero({ jogos, jogosDesconto }) {
   return (
     <main>
       <section className={styles.Section_Topo}>
-      
         <div className={styles.BoasVindas}>
-
+          
           <h1 className={styles.H1_Topo}>
             Busque a sua próxima aventura <br />
             com preço justo e qualidade.
@@ -21,43 +18,54 @@ function Hero({ onSearch }) {
           </p>
         </div>
 
-        {/* Div do campo de  busca da home  */}
+        {/* Div do campo de busca */}
         <div className={styles.Div_Input}>
-
-          <label className={styles.SearchGame} id="search" htmlFor="search">
+          
+          <label className={styles.SearchGame} htmlFor="search">
             Faça a sua busca:
           </label>
-        
-          {/* Buscar */}
-        <input
-          value={busca}
-          onChange={(e) => setBusca(e.target.value)}
-          onKeyDown={(e) => {
-            // para ser buscado ao clicar em Enter enão pérmite chamar a API caso o input esteja vazio
-            if (e.key === "Enter" && busca.trim() !== "") {
-              onSearch(busca.trim())
-            }
-          }}
-          className={styles.inputBuscar}
-          type="search"
-          placeholder="Buscar jogos..."
-        />
+
+          <input
+            className={styles.inputBuscar}
+            type="search"
+            placeholder="Buscar jogos..."/>
         </div>
-        
       </section>
 
-      {/* Section aonde esta a divisa */}
-
+      {/* faixa de desccontos */}
       <section className={styles.SectionDescontosdaSemana}>
+        <h2 className={styles.h2DescontosdaSemana}>
+          Esses são os jogos com{" "}
+          <span className={styles.SpanDescontosSemana}>Descontos:</span>
+        </h2>
 
-        <h2 className={styles.h2DescontosdaSemana}>Esses são os jogos com 
-        <span className={styles.SpanDescontosSemana}> Descontos:</span> </h2>
-      
+        {/* 3 cards com valores baixos */}
+        <div className={styles.ContainerCards}>
+          {jogosDesconto && jogosDesconto.length > 0 ? (
+            jogosDesconto.map((jogo) => (
+              <GameCard key={jogo.id} jogo={jogo} />
+            ))
+          ) : (
+            <p style={{ color: "#fff", gridColumn: "1 / -1", textAlign: "center" }}>
+              Carregando promoções...
+            </p>
+          )}
+        </div>
       </section>
 
-      {/* section de conteudo */}
+      {/* Faixa que mostra alguns games */}
       <section className={styles.SectionConteudo}>
         <h1 className={styles.H1_conteudo}>Mais Populares:</h1>
+
+        <div className={styles.ContainerCards}>
+          {jogos && jogos.length > 0 ? (
+            jogos.map((jogo) => (
+              <GameCard key={jogo.id} jogo={jogo} />
+            ))
+          ) : (
+            <p>Carregando jogos populares...</p>
+          )}
+        </div>
       </section>
     </main>
   );
